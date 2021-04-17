@@ -38,11 +38,11 @@ always@(*) begin
     zeroCase[0]=((aExp==0)&&(aSig==0))?1:0;
     zeroCase[1]=((bExp==0)&&(bSig==0))?1:0;
     //All zeros
-    if(zeroCase==2'b11) begin sumSig=0;sumExp=0;sumSign=0; end
+    if(zeroCase==2'b11) begin outSig=0;sumExp=0;sumSign=0; end
     //b=0
-    else if(zeroCase==2'b10) begin sumSig=aSig; sumExp=aExp;sumSign=aSign; end
+    else if(zeroCase==2'b10) begin outSig=aSig; sumExp=aExp;sumSign=aSign; end
     //a=0
-    else if(zeroCase==2'b01) begin sumSig=bSig; sumExp=bExp; sumSign=bSign;end
+    else if(zeroCase==2'b01) begin outSig=bSig; sumExp=bExp; sumSign=bSign;end
     else begin
     //2. Determine bigger input by comparing exponenets and mantissas
         //Different Signs
